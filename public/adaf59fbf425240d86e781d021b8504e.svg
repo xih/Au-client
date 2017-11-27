@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="95px" viewBox="0 0 95 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Au</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Au">
+            <g id="Rectangle">
+                <g id="path-1-link" fill="#FFFFFF">
+                    <rect id="path-1" x="0" y="0.98434744" width="94.5052083" height="93.5130071"></rect>
+                </g>
+                <rect id="Rectangle-path" stroke="#979797" x="0.5" y="1.48434744" width="93.5052083" height="92.5130071"></rect>
+            </g>
+            <g id="Xe" transform="translate(17.000000, 13.000000)" font-size="48" font-family="Futura-Medium, Futura" fill="#000000" font-weight="400">
+                <text id="Au">
+                    <tspan x="0" y="50">Au</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
