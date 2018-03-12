@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Wrapper, Column, VerticalAlign, CenterScroll, Brand, Title, Description, Price } from 'components/ItemDetail';
+import { Wrapper, Column, Fixed, CenterScroll, Brand, Title, Description, Price } from 'components/ItemDetail';
 import { Button } from 'components/Button';
 import { Dropdown } from 'components/Form';
 
@@ -29,24 +29,24 @@ class ItemDetails extends Component {
 		return (
 			<Wrapper>
 				<Column>
-					<VerticalAlign>
+					<Fixed align='left'>
 						<Brand>{brand}</Brand>
 						<Title>{title}</Title>
 						<Description>{description}</Description>
-					</VerticalAlign>
+					</Fixed>
 				</Column>
 				<Column>
 					<CenterScroll images={images} />
 				</Column>
 				<Column>
-					<VerticalAlign>
+					<Fixed align='right'>
 						<Price>{price} USD</Price>
 						Free express shipping and returns in the United States.<br />
 						View Size Chart<br />
             <Dropdown />
             <Button>Add to Bag</Button>
 
-					</VerticalAlign>
+					</Fixed>
 				</Column>
 			</Wrapper>
 		);

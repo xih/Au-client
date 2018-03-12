@@ -2,8 +2,7 @@ import React from 'react'
 import glam from 'glamorous'
 
 const CenterScrollWrapper = glam.div({
-  height: '100%',
-  overflow: 'scroll'
+  height: '100%'
 })
 const Image = glam.img({
   marginBottom: 20,
@@ -23,17 +22,21 @@ export const Wrapper = glam.div('row', {
 })
 
 export const Column = glam.div('col s4', {
-  height: '100%'
+  height: '100%',
+  position: 'relative'
 })
 
-export const VerticalAlign = glam.div({
-  display: 'flex',
-  height: '100%',
-  justifyContent: 'center',
-  flexDirection: 'column'
-}, styles => ({
-  justifyContent: styles.justifyContent || 'center'
-}))
+export const Fixed = glam.div({
+  position: 'absolute',
+  height: '100%'
+}, ({ align = 'left' }) => {
+
+  return {
+    top: '40%',
+    [align]: 64,
+    width: '100%'
+  };
+})
 
 export const Brand = glam.h4({})
 
