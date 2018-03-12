@@ -10947,7 +10947,7 @@ var _Routes = __webpack_require__(480);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _reducers = __webpack_require__(538);
+var _reducers = __webpack_require__(533);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -41400,7 +41400,7 @@ var _ItemDetailPage = __webpack_require__(526);
 
 var _ItemDetailPage2 = _interopRequireDefault(_ItemDetailPage);
 
-var _NotFoundPage = __webpack_require__(537);
+var _NotFoundPage = __webpack_require__(532);
 
 var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
@@ -45879,8 +45879,8 @@ var ItemDetails = function (_Component) {
 					_ItemDetail.Column,
 					null,
 					_react2.default.createElement(
-						_ItemDetail.VerticalAlign,
-						null,
+						_ItemDetail.Fixed,
+						{ align: 'left' },
 						_react2.default.createElement(
 							_ItemDetail.Brand,
 							null,
@@ -45907,8 +45907,8 @@ var ItemDetails = function (_Component) {
 					_ItemDetail.Column,
 					null,
 					_react2.default.createElement(
-						_ItemDetail.VerticalAlign,
-						null,
+						_ItemDetail.Fixed,
+						{ align: 'right' },
 						_react2.default.createElement(
 							_ItemDetail.Price,
 							null,
@@ -45948,7 +45948,7 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Price = exports.Description = exports.Title = exports.Brand = exports.VerticalAlign = exports.Column = exports.Wrapper = exports.CenterScroll = undefined;
+exports.Price = exports.Description = exports.Title = exports.Brand = exports.Fixed = exports.Column = exports.Wrapper = exports.CenterScroll = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45962,9 +45962,10 @@ var _glamorous2 = _interopRequireDefault(_glamorous);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var CenterScrollWrapper = _glamorous2.default.div({
-  height: '100%',
-  overflow: 'scroll'
+  height: '100%'
 });
 var Image = _glamorous2.default.img({
   marginBottom: 20,
@@ -45989,18 +45990,23 @@ var Wrapper = exports.Wrapper = _glamorous2.default.div('row', {
 });
 
 var Column = exports.Column = _glamorous2.default.div('col s4', {
-  height: '100%'
+  height: '100%',
+  position: 'relative'
 });
 
-var VerticalAlign = exports.VerticalAlign = _glamorous2.default.div({
-  display: 'flex',
-  height: '100%',
-  justifyContent: 'center',
-  flexDirection: 'column'
-}, function (styles) {
-  return {
-    justifyContent: styles.justifyContent || 'center'
-  };
+var Fixed = exports.Fixed = _glamorous2.default.div({
+  position: 'absolute',
+  height: '100%'
+}, function (_ref2) {
+  var _ref3;
+
+  var _ref2$align = _ref2.align,
+      align = _ref2$align === undefined ? 'left' : _ref2$align;
+
+
+  return _ref3 = {
+    top: '40%'
+  }, _defineProperty(_ref3, align, 64), _defineProperty(_ref3, 'width', '100%'), _ref3;
 });
 
 var Brand = exports.Brand = _glamorous2.default.h4({});
@@ -48976,12 +48982,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49014,7 +49015,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 538 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49026,15 +49027,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(118);
 
-var _userReducer = __webpack_require__(539);
+var _userReducer = __webpack_require__(534);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
-var _authReducer = __webpack_require__(540);
+var _authReducer = __webpack_require__(535);
 
 var _authReducer2 = _interopRequireDefault(_authReducer);
 
-var _adminReducer = __webpack_require__(541);
+var _adminReducer = __webpack_require__(536);
 
 var _adminReducer2 = _interopRequireDefault(_adminReducer);
 
@@ -49047,7 +49048,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 539 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49072,7 +49073,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 540 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49097,7 +49098,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 541 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
