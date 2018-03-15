@@ -1,6 +1,6 @@
-import React from 'react';
-import glam from 'glamorous';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import glam from 'glamorous'
+import { Link } from 'react-router-dom'
 
 export const LinkButton = glam(Link)({
   fontSize: 24,

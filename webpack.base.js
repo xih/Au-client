@@ -10,7 +10,12 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: /node_modules/,
 				options: {
-					presets: ['react', 'stage-0', ['env', { targets: { browsers: ['last 2 versions'] } }]],
+					plugins: [
+	          'transform-class-properties',
+	          'transform-object-assign',
+	          'transform-object-rest-spread',
+					],
+					presets: ['es2015', 'react', 'stage-2', ['env', { targets: { browsers: ['last 2 versions'] } }]],
 				},
 			},
 			{
