@@ -44027,6 +44027,45 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var getStreetstyleImages = function () {
+	var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+		var response, streetstyleImages;
+		return regeneratorRuntime.wrap(function _callee$(_context) {
+			while (1) {
+				switch (_context.prev = _context.next) {
+					case 0:
+						_context.prev = 0;
+						_context.next = 3;
+						return fetch('http://localhost:8000/streetstyle/');
+
+					case 3:
+						response = _context.sent;
+						_context.next = 6;
+						return response.json();
+
+					case 6:
+						streetstyleImages = _context.sent;
+						return _context.abrupt('return', streetstyleImages);
+
+					case 10:
+						_context.prev = 10;
+						_context.t0 = _context['catch'](0);
+
+						console.log('Error!', _context.t0);
+
+					case 13:
+					case 'end':
+						return _context.stop();
+				}
+			}
+		}, _callee, this, [[0, 10]]);
+	}));
+
+	return function getStreetstyleImages() {
+		return _ref.apply(this, arguments);
+	};
+}();
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -44039,6 +44078,10 @@ var _matchingImages = __webpack_require__(514);
 
 var _matchingImages2 = _interopRequireDefault(_matchingImages);
 
+var _Gallery = __webpack_require__(537);
+
+var _Gallery2 = _interopRequireDefault(_Gallery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44046,6 +44089,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 var Home = function (_Component) {
 	_inherits(Home, _Component);
@@ -44055,27 +44100,43 @@ var Home = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
 
-		_this.state = { portraits: [] };
+		_this.state = { portraits: [], portraits2: [] };
 		return _this;
 	}
 
 	_createClass(Home, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			var _this2 = this;
+
 			var items = _matchingImages2.default.items;
 
+			getStreetstyleImages().then(function (p) {
+				return _this2.setState({ portraits2: p });
+			});
 			this.setState({ portraits: items });
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var portraits = this.state.portraits;
+			var _state = this.state,
+			    portraits = _state.portraits,
+			    portraits2 = _state.portraits2;
+
+			console.log(portraits2);
+
+			var content = _react2.default.createElement('div', null);
+
+			if (portraits2) {
+				content = _react2.default.createElement(_Gallery2.default, { images: portraits2 });
+			}
 
 			return _react2.default.createElement(
 				'div',
 				null,
 				_react2.default.createElement(_FourPortrait2.default, { portraits: portraits.slice(0, 4) }),
-				_react2.default.createElement(_FourPortrait2.default, { portraits: portraits.slice(5, 8) })
+				_react2.default.createElement(_FourPortrait2.default, { portraits: portraits.slice(5, 8) }),
+				content
 			);
 		}
 	}]);
@@ -49121,6 +49182,81 @@ exports.default = function () {
       return state;
   }
 };
+
+/***/ }),
+/* 537 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _BasicImage = __webpack_require__(538);
+
+var _BasicImage2 = _interopRequireDefault(_BasicImage);
+
+var _glamorous = __webpack_require__(39);
+
+var _glamorous2 = _interopRequireDefault(_glamorous);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Gallery = function Gallery(props) {
+  var images = props.images;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    images.map(function (img, i) {
+      return _react2.default.createElement(_BasicImage2.default, _extends({ key: i }, img));
+    })
+  );
+};
+
+exports.default = Gallery;
+
+/***/ }),
+/* 538 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _glamorous = __webpack_require__(39);
+
+var _glamorous2 = _interopRequireDefault(_glamorous);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BasicImage = function BasicImage(props) {
+  var streetstyle_src = props.streetstyle_src;
+
+  console.log(props);
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement('img', { src: streetstyle_src })
+  );
+};
+
+exports.default = BasicImage;
 
 /***/ })
 /******/ ]);

@@ -36,7 +36,7 @@ const SideInfo = glam.div({
   width: 108,
   top: 35,
   left: -35,
-  paddingRight: 4, 
+  paddingRight: 4,
   transform: 'rotate(270deg)'
 });
 

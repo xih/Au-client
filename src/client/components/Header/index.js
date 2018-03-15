@@ -8,7 +8,7 @@ import { AuIcon, BagIcon } from 'components/Icons';
 const Nav = glam.nav('white', {
   marginBottom: 4
 });
-const NavWrapper = glam.div({ 
+const NavWrapper = glam.div({
   margin: '0 auto',
   maxWidth: 1000
 });
