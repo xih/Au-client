@@ -1,10 +1,11 @@
-import React from 'react';
-import glam from 'glamorous';
-import { renderRoutes } from 'react-router-config';
+import React from 'react'
+import glam from 'glamorous'
+import { renderRoutes } from 'react-router-config'
 
-import { fetchCurrentUser } from './actions';
+import { fetchCurrentUser } from './actions'
 
-import Header from './components/Header';
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const AppWrapper = glam.div({
   fontFamily: 'futura, sans-serif',
@@ -21,6 +22,7 @@ const App = ({ route }) => {
       <Container>
         {renderRoutes(route.routes)}
       </Container>
+      <Footer />
     </AppWrapper>
   );
 };
