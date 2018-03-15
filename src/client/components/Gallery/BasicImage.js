@@ -1,13 +1,16 @@
 import React from 'react'
 import glam from 'glamorous'
+import { Card, Icon, Image } from 'semantic-ui-react'
+
 
 
 const BasicImage = (props) => {
   const { streetstyle_src } = props
-  console.log(props)
   return (
     <div>
-      <img src={streetstyle_src} />
+      <Card centered>
+        <Image src={streetstyle_src} />
+      </Card>
     </div>
   )
 }

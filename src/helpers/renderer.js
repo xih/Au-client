@@ -33,6 +33,7 @@ export default (req, store, context) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link rel="stylesheet" href="https://use.typekit.net/vvc5rso.css">
         <link rel="stylesheet" href="https://unpkg.com/react-select/dist/react-select.css">
+				<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
       </head>
       <body>
         <div id="root">${html}</div>

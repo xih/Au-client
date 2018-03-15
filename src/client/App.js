@@ -12,7 +12,7 @@ const AppWrapper = glam.div({
   fontWeight: 500
 });
 
-const Container = glam.div('container');
+const Container = glam.div('container')
 
 const App = ({ route }) => {
   return (

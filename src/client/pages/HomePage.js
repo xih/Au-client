@@ -4,6 +4,7 @@ import FourPortrait from 'components/Gallery/FourPortrait'
 import matchingImages from 'assets/matchingImages.json'
 
 import Gallery from 'components/Gallery/Gallery'
+import { Grid } from 'semantic-ui-react'
 
 async function getStreetstyleImages() {
 	try {
@@ -27,11 +28,8 @@ class Home extends Component {
 		this.setState({ portraits: items })
 	}
 
-
-
 	render() {
 		const { portraits, portraits2 } = this.state
-		console.log(portraits2)
 
 		let content = <div></div>
 
@@ -45,8 +43,7 @@ class Home extends Component {
 				<FourPortrait portraits={portraits.slice(0, 4)} />
 				<FourPortrait portraits={portraits.slice(5, 8)} />
 
-				{content}
-
+					{content}
 			</div>
 		);
 	}
