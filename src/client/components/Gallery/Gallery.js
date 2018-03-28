@@ -5,6 +5,7 @@ import { Grid } from 'semantic-ui-react'
 
 const Gallery = (props) => {
   const { images } = props
+  console.log(images)
   return (
     <Grid container columns={1}>
       {images.map((img, i) =>

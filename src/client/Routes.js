@@ -25,6 +25,10 @@ export default [
         path: '/admins'
       },
       {
+        ...UserListPage,
+        path: '/signup'
+      },
+      {
         ...ItemDetailPage,
         path: '/:slug',
         exact: true
@@ -34,4 +38,4 @@ export default [
       }
     ]
   }
-];
+]

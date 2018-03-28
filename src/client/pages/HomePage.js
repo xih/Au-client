@@ -8,9 +8,9 @@ import { Grid } from 'semantic-ui-react'
 
 async function getStreetstyleImages() {
 	try {
-		let response = await fetch('http://localhost:8000/streetstyle/')
-		let streetstyleImages = await response.json()
-		return streetstyleImages
+		let response = await fetch('http://localhost:8000/images/')
+		let images = await response.json()
+		return images
 	} catch(e) {
 		console.log('Error!', e)
 	}
@@ -24,7 +24,7 @@ class Home extends Component {
 
 	componentDidMount() {
 		const { items } = matchingImages
-		getStreetstyleImages().then( p => this.setState({ portraits2: p }))
+		getStreetstyleImages().then( images => this.setState({ portraits2: images }))
 		this.setState({ portraits: items })
 	}
 
