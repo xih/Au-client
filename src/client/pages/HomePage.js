@@ -39,12 +39,14 @@ class Home extends Component {
 
 
 		return (
-			<div>
-				<FourPortrait portraits={portraits.slice(0, 4)} />
-				<FourPortrait portraits={portraits.slice(5, 8)} />
+			<Grid padded='vertically'>
 
-					{content}
-			</div>
+					<FourPortrait portraits={portraits.slice(0, 4)} />
+					<FourPortrait portraits={portraits.slice(5, 8)} />
+
+
+				{content}
+			</Grid>
 		);
 	}
 };

@@ -19,10 +19,11 @@ const App = ({ route }) => {
   return (
     <AppWrapper>
       <Header />
-      <Container>
+      {/* <Container> */}
         {renderRoutes(route.routes)}
-      </Container>
-      <Footer />
+      {/* </Container> */}
+      {/*  TODO Make the footer sticky */}
+      {/* <Footer /> */}
     </AppWrapper>
   );
 };

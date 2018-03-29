@@ -1,9 +1,10 @@
-import App from './App';
-import HomePage from './pages/HomePage';
-import UserListPage, { loadData } from './pages/UserListPage';
-import AdminListPage from './pages/AdminListPage';
-import ItemDetailPage from './pages/ItemDetailPage';
-import NotFoundPage from './pages/NotFoundPage';
+import App from './App'
+import HomePage from './pages/HomePage'
+import UserListPage, { loadData } from './pages/UserListPage'
+import AdminListPage from './pages/AdminListPage'
+import ItemDetailPage from './pages/ItemDetailPage'
+import NotFoundPage from './pages/NotFoundPage'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 export default [
   {
@@ -27,6 +28,10 @@ export default [
       {
         ...UserListPage,
         path: '/signup'
+      },
+      {
+        ...ProductDetailPage,
+        path: '/shearling-jacket'
       },
       {
         ...ItemDetailPage,

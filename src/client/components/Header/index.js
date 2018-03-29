@@ -61,11 +61,13 @@ class MenuExampleInverted extends Component {
     const { activeItem, fixed } = this.state
 
     return (
-      <StyledMenu borderless
+      <StyledMenu
+        borderless
+        fluid
         size='large'
-        fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}>
+        inverted={!fixed}
+        pointing={!fixed}
+      >
         <Container>
           <Link to='/' >
             <Menu.Item name='Opulence' as='a' />
