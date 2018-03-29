@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import {
   Input,
   Menu,
-  Container
+  Container,
+  Icon
 } from 'semantic-ui-react'
 
 import { Link } from 'react-router-dom'
@@ -77,11 +78,15 @@ class MenuExampleInverted extends Component {
             <Link to='/signup' >
               <Menu.Item name='Sign Up' as='a' onClick={this.handleItemClick} />
             </Link>
-
           </Menu.Menu>
+
           <Link to='/login' >
             <Menu.Item name='Log In' as='a' onClick={this.handleItemClick} />
           </Link>
+          <Link to='/shearling-jacket'>
+            <Icon name='shopping bag'/>
+          </Link>
+
         </Container>
       </StyledMenu>
     )
