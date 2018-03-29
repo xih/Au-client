@@ -63,9 +63,9 @@ class MenuExampleInverted extends Component {
 
     return (
       <StyledMenu
-        borderless
         fluid
         size='large'
+        fixed='top'
         inverted={!fixed}
         pointing={!fixed}
       >
@@ -106,34 +106,9 @@ const MenuExampleInputs = () => (
 )
 
 const Header = ({ auth }) => {
-  // console.log('My auth status is ', auth);
-
   return (
     <MenuExampleInverted />
   )
-
-  // return (
-  //   <Nav>
-  //     <NavWrapper>
-  //       <Link to='/'>
-  //         <AuIcon />
-  //       </Link>
-  //       <Menu>
-  //         <MenuItem>
-  //           <Link to='/login'>Log In</Link>
-  //         </MenuItem>
-  //         <MenuItem>
-  //           <Link to='/signup'>Sign Up</Link>
-  //         </MenuItem>
-  //         <MenuItem>
-  //           <Link to='/cart'>
-  //             <BagIcon marginLeft={0} height={48} />
-  //           </Link>
-  //         </MenuItem>
-  //       </Menu>
-  //     </NavWrapper>
-  //   </Nav>
-  // );
 }
 
 function mapStateToProps({ auth }) {

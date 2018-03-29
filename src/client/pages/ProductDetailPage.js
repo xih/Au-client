@@ -18,9 +18,9 @@ const MiddleColumn = styled(Grid.Column)`
   }
 `
 
-const FixedColumn = styled(Grid.Column)`
+const GridAffixedToTop = styled(Grid.Column)`
   &&& {
-    position: fixed;
+    padding-top: 5em;
   }
 `
 const Spacing = styled.div`

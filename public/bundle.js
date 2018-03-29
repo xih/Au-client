@@ -63581,6 +63581,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n  margin-top: 5em;\n'], ['\n  margin-top: 5em;\n']);
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -63588,6 +63590,10 @@ var _react2 = _interopRequireDefault(_react);
 var _glamorous = __webpack_require__(59);
 
 var _glamorous2 = _interopRequireDefault(_glamorous);
+
+var _styledComponents = __webpack_require__(556);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _reactRouterConfig = __webpack_require__(381);
 
@@ -63603,11 +63609,15 @@ var _Footer2 = _interopRequireDefault(_Footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 var AppWrapper = _glamorous2.default.div({
   fontFamily: 'futura, sans-serif',
   fontStyle: 'normal',
   fontWeight: 500
 });
+
+var Div = _styledComponents2.default.div(_templateObject);
 
 var Container = _glamorous2.default.div('container');
 
@@ -63618,7 +63628,11 @@ var App = function App(_ref) {
     AppWrapper,
     null,
     _react2.default.createElement(_Header2.default, null),
-    (0, _reactRouterConfig.renderRoutes)(route.routes)
+    _react2.default.createElement(
+      Div,
+      null,
+      (0, _reactRouterConfig.renderRoutes)(route.routes)
+    )
   );
 };
 
@@ -66107,9 +66121,9 @@ var MenuExampleInverted = function (_Component) {
       return _react2.default.createElement(
         StyledMenu,
         {
-          borderless: true,
           fluid: true,
           size: 'large',
+          fixed: 'top',
           inverted: !fixed,
           pointing: !fixed
         },
@@ -66168,32 +66182,7 @@ var MenuExampleInputs = function MenuExampleInputs() {
 var Header = function Header(_ref) {
   var auth = _ref.auth;
 
-  // console.log('My auth status is ', auth);
-
   return _react2.default.createElement(MenuExampleInverted, null);
-
-  // return (
-  //   <Nav>
-  //     <NavWrapper>
-  //       <Link to='/'>
-  //         <AuIcon />
-  //       </Link>
-  //       <Menu>
-  //         <MenuItem>
-  //           <Link to='/login'>Log In</Link>
-  //         </MenuItem>
-  //         <MenuItem>
-  //           <Link to='/signup'>Sign Up</Link>
-  //         </MenuItem>
-  //         <MenuItem>
-  //           <Link to='/cart'>
-  //             <BagIcon marginLeft={0} height={48} />
-  //           </Link>
-  //         </MenuItem>
-  //       </Menu>
-  //     </NavWrapper>
-  //   </Nav>
-  // );
 };
 
 function mapStateToProps(_ref2) {
@@ -93912,7 +93901,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  &&& {\n    overflow: auto;\n  }\n'], ['\n  &&& {\n    overflow: auto;\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  &&& {\n    position: fixed;\n  }\n'], ['\n  &&& {\n    position: fixed;\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  &&& {\n    padding-top: 5em;\n  }\n'], ['\n  &&& {\n    padding-top: 5em;\n  }\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  margin: 1em;\n'], ['\n  margin: 1em;\n']);
 
 var _react = __webpack_require__(0);
@@ -93944,7 +93933,7 @@ var options = [{ key: 1, text: 'Small', value: 'small' }, { key: 2, text: 'Mediu
 
 var MiddleColumn = (0, _styledComponents2.default)(_semanticUiReact.Grid.Column)(_templateObject);
 
-var FixedColumn = (0, _styledComponents2.default)(_semanticUiReact.Grid.Column)(_templateObject2);
+var GridAffixedToTop = (0, _styledComponents2.default)(_semanticUiReact.Grid.Column)(_templateObject2);
 var Spacing = _styledComponents2.default.div(_templateObject3);
 
 var ProductDetailPage = function (_Component) {

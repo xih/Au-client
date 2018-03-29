@@ -1,5 +1,6 @@
 import React from 'react'
 import glam from 'glamorous'
+import styled from 'styled-components'
 import { renderRoutes } from 'react-router-config'
 
 import { fetchCurrentUser } from './actions'
@@ -11,7 +12,11 @@ const AppWrapper = glam.div({
   fontFamily: 'futura, sans-serif',
   fontStyle: 'normal',
   fontWeight: 500
-});
+})
+
+const Div = styled.div`
+  margin-top: 5em;
+`
 
 const Container = glam.div('container')
 
@@ -20,7 +25,9 @@ const App = ({ route }) => {
     <AppWrapper>
       <Header />
       {/* <Container> */}
+      <Div>
         {renderRoutes(route.routes)}
+      </Div>
       {/* </Container> */}
       {/*  TODO Make the footer sticky */}
       {/* <Footer /> */}
