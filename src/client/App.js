@@ -24,11 +24,11 @@ const App = ({ route }) => {
   return (
     <AppWrapper>
       <Header />
-      {/* <Container> */}
+      <Container>
       <Div>
         {renderRoutes(route.routes)}
       </Div>
-      {/* </Container> */}
+      </Container>
       {/*  TODO Make the footer sticky */}
       {/* <Footer /> */}
     </AppWrapper>

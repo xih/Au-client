@@ -9,26 +9,10 @@ import {
 } from 'semantic-ui-react'
 
 import { Link } from 'react-router-dom'
-
-// import { LinkButton as Link } from 'components/Button'
 import { AuIcon, BagIcon } from 'components/Icons'
-
 import styled from 'styled-components'
 
-// const Nav = glam.nav('white', {
-//   marginBottom: 4
-// });
-// const NavWrapper = glam.div({
-//   margin: '0 auto',
-//   maxWidth: 1000
-// });
 
-// const Menu = glam.ul('right');
-// const MenuItem = glam.li();
-
-// const Menu = glam.Menu({
-//   color: E1D4C0,
-// })
 
 const StyledMenu = styled(Menu)`
   &&& {
@@ -83,7 +67,8 @@ class MenuExampleInverted extends Component {
           <Link to='/login' >
             <Menu.Item name='Log In' as='a' onClick={this.handleItemClick} />
           </Link>
-          <Link to='/shearling-jacket'>
+          {/* <Link to='/shearling-jacket'> */}
+          <Link to='/'>
             <Icon name='shopping bag'/>
           </Link>
 

@@ -5,6 +5,8 @@ import AdminListPage from './pages/AdminListPage'
 import ItemDetailPage from './pages/ItemDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProductDetailPage from './pages/ProductDetailPage'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
 
 export default [
   {
@@ -26,12 +28,16 @@ export default [
         path: '/admins'
       },
       {
-        ...UserListPage,
+        ...SignupPage,
         path: '/signup'
       },
       {
         ...ProductDetailPage,
         path: '/shearling-jacket'
+      },
+      {
+        ...LoginPage,
+          path: '/login'
       },
       {
         ...ItemDetailPage,
